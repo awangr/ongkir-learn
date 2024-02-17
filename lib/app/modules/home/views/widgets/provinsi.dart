@@ -14,6 +14,11 @@ class Provinsi extends GetView<HomeController> {
     return Padding(
       padding: EdgeInsets.only(bottom: 20),
       child: DropdownSearch<Provinces>(
+        dropdownBuilder: (context, item) {
+          return Container(
+            child: Text('${item?.province}'),
+          );
+        },
         asyncItems: (String filter) async {
           Uri url = Uri.parse('https://api.rajaongkir.com/starter/province');
           try {
