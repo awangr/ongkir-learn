@@ -8,21 +8,21 @@ class City {
   City(this.cityId, this.provId, this.province, this.type, this.cityName,
       this.postalCode);
   City.fromJson(Map<String, dynamic> json) {
-    cityId = json['cityId'];
-    provId = json['provId'];
+    cityId = json['city_id'];
+    provId = json['province_id'];
     province = json['province'];
     type = json['type'];
-    cityName = json['cityName'];
-    postalCode = json['postalCode'];
+    cityName = json['city_name'];
+    postalCode = json['postal_code'];
   }
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['cityId'] = cityId;
-    data['provId'] = provId;
+    data['city_id'] = cityId;
+    data['province_id'] = provId;
     data['province'] = province;
     data['type'] = type;
-    data['cityName'] = cityName;
-    data['postalCode'] = postalCode;
+    data['city_name'] = cityName;
+    data['postal_code'] = postalCode;
     return data;
   }
 
