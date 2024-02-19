@@ -20,7 +20,16 @@ class HomeView extends GetView<HomeController> {
             padding: EdgeInsets.all(15),
             children: [
               Provinsi(tipe: 'asal'),
-              Kota()
+              Obx(() => controller.hiddenKotaAsal.isTrue
+                  ? SizedBox()
+                  : Kota(
+                      provId: controller.provAsalId.value,
+                      tipe: 'asal',
+                    )),
+              Provinsi(tipe: 'tujuan'),
+              Obx(() => controller.hiddenKotaTujuan.isTrue
+                  ? SizedBox()
+                  : Kota(provId: controller.provTujuanId.value, tipe: 'tujuan'))
               // Provinsi(tipe: 'tujuan'),
               // Obx(() => controller.hiddenKotaTujuan.isTrue
               //     ? SizedBox()
